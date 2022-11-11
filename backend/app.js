@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path')
+
 const cookieParser = require("cookie-parser");
 
 const bodyParser = require("body-parser");
@@ -31,10 +31,7 @@ app.use("/api/v1", product);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
 
-app.use(express.static(path.join(__dirname,"../frontend/build")))
-app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"../frontend/build/index.html"))
-})
+
 
 //Middleware import
 app.use(errorMiddleware);
